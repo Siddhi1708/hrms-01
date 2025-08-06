@@ -1,40 +1,75 @@
 version: '3.4'
+ 
 services:
+
   springboot-service:
-    image: siddhi178/backend:z1
+
+    image: kalpant/backend:a53
+
     environment:
+
       SPRING_DATASOURCE_URL: jdbc:mysql://mysql-service:3306/hrmsportal
+
       SPRING_DATASOURCE_USERNAME: root
+
       SPRING_DATASOURCE_PASSWORD: root
+
     ports:
+
       - "8080:8080"
+
     depends_on:
+
       - mysql-service
+
     networks:
+
       - mynetwork
+ 
   frontend:
-    image: siddhi178/frontend:z1
-   ports:
-      - "4200:80"
-    depends_on:
-      - mysql-service
-    networks:
-      - mynetwork
-  mysql-service:
-    image: mysql:8.0
-    environment:
-      MYSQL_ROOT_PASSWORD: "root"
-      MYSQL_DATABASE: "hrmsportal"
-      MYSQL_PASSWORD: "root"
+
+    image: kalpant/frontend:a51
+
     ports:
-      - "3306:3306"
-    volumes:
-      - mysql-data:/var/lib/mysql
+
+      - "4200:80"
+
+    depends_on:
+
+      - springboot-service
+
     networks:
+
       - mynetwork
+ 
+  mysql-service:
+
+    image: mysql:8.0
+
+    environment:
+
+      MYSQL_ROOT_PASSWORD: root
+
+      MYSQL_DATABASE: hrmsportal
+
+    ports:
+
+      - "3306:3306"
+
+    volumes:
+
+      - mysql-data:/var/lib/mysql
+
+    networks:
+
+      - mynetwork
+ 
 networks:
+
   mynetwork:
  
 volumes:
+
   mysql-data:
+
  
