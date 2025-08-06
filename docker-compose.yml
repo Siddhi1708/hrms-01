@@ -28,7 +28,7 @@ services:
  
   springboot-service:
 
-    image: siddhi178/backend:z2
+    image: siddhi178/backend:z5
 
     container_name: springboot-service
 
@@ -54,7 +54,7 @@ services:
  
   frontend:
 
-    image: siddhi178/frontend:z2
+    image: siddhi178/frontend:z5
 
     container_name: frontend
 
