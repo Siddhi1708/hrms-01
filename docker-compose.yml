@@ -4,7 +4,7 @@ services:
 
   springboot-service:
 
-    image: kalpant/backend:a53
+    image: siddhi178/backend:z2
 
     environment:
 
@@ -28,7 +28,7 @@ services:
  
   frontend:
 
-    image: kalpant/frontend:a51
+    image: siddhi178/frontend:z2
 
     ports:
 
