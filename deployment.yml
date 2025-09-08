@@ -28,7 +28,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: kalpant/frontend:
+          image: siddhi178/frontend:80
           imagePullPolicy: Always
           ports:
             - containerPort: 80
@@ -62,7 +62,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image: kalpant/backend:
+          image: siddhi178/backend:80
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
