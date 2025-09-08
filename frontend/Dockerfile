@@ -1,7 +1,8 @@
-FROM nginx:latest
+FROM nginx:alpine
  
 COPY dist/hrms/browser/ /usr/share/nginx/html
-RUN chmod -R 755 /usr/share/nginx/html && chown -R nginx:nginx /usr/share/nginx/html
+ 
+RUN chmod -R 777 /usr/share/nginx/html
  
 COPY default.conf /etc/nginx/conf.d/default.conf
  
