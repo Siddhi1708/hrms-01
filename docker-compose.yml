@@ -28,7 +28,7 @@ services:
  
   frontend:
 
-    image: siddhi178/frontend:z5
+    image: siddhi178/frontend:80
 
     ports:
 
